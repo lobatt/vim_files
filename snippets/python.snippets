@@ -1,0 +1,38 @@
+snippet header
+	#!/usr/bin/env python
+	# -*- indent-tabs-mode: nil; tab-width: 4; coding: utf-8 -*-
+	# vi: set ts=4 sts=4 sw=4 set smarttab set expandtab
+
+snippet import
+	import os, re, sys, getopt
+	import logging
+	import locale
+
+snippet xml
+	import xml.etree.ElementTree as xml
+
+snippet main
+	if __name__ == '__main__':
+
+snippet logger
+		locale.setlocale(locale.LC_ALL, "en_US.UTF-8")
+		logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s', filename=os.path.realpath(os.path.dirname(sys.argv[0])) + '/debug.log', filemode='a')
+
+snippet getopt
+		try:
+			opts, args = getopt.getopt(sys.argv[1:], 'd:', ['date=', 'debug'])
+			for opt, arg in opts:
+				if opt in ['-d', '--date']: date = datetime.date(int(arg[:4]), int(arg[4:6]), int(arg[6:8]))
+				elif opt in ['--debug']:
+					debug = True
+		except getopt.GetoptError, err:
+			print str(err)
+			print __doc__
+			sys.exit(1)
+
+snippet urlopen
+		import urllib2
+		opener = urllib2.build_opener()
+		opener.addheaders = [('User-Agent', 'FreeWheel HLS Validator')]
+		urllib2.install_opener(opener)
+		response =  urllib2.urlopen(url)
