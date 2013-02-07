@@ -1,0 +1,3 @@
+[submodule "bundle/vimbo"]
+	path = bundle/vimbo
+	url = git@github.com:lobatt/Vimbo.git
