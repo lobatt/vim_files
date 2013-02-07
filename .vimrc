@@ -35,11 +35,10 @@ nmap wm :WMToggle<cr>
 let g:Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 "for omnicomplete
-set tags+=~/.vim/cpp_tags/cpp 
-set tags+=~/.vim/cpp_tags/ads 
-" set tags+=~/.vim/cpp_tags/ace 
-" build tags of your own project with CTRL+F12
-map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+"set tags+=~/.vim/cpp_tags/cpp 
+"set tags+=~/.vim/cpp_tags/ads 
+" build tags of your own project with leader + t
+nmap <leader>T :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " OmniCppComplete
 let OmniCpp_NamespaceSearch = 1
@@ -56,9 +55,6 @@ set completeopt=menuone,menu,longest,preview
 
 nmap <F12> <C-w><M-.> 
 nmap <F10> <Esc>:!svn diff % <CR>
-
-" for Jsbeautifier
-map <C-f> :call g:Jsbeautify()<cr>
 
 " for python
 autocmd FileType python set expandtab
