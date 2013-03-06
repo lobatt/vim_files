@@ -36,3 +36,8 @@ snippet urlopen
 		opener.addheaders = [('User-Agent', 'FreeWheel HLS Validator')]
 		urllib2.install_opener(opener)
 		response =  urllib2.urlopen(url)
+
+snippet openxml
+	import xml.etree.ElementTree as xml
+	with open(${1:input}, 'r') as f:
+		xmlfile = xml.parse(f)
