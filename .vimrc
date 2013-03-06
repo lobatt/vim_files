@@ -14,7 +14,7 @@ set hlsearch
 
 "Vundle
 filetype off                   " required!
-set rtp+=~/.vim/vundle/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " let Vundle manage Vundle
 " required! 
