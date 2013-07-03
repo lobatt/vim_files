@@ -1,0 +1,19 @@
+snippet import
+	import (
+		"${1:module}"
+	)
+
+snippet func
+	func ${1:Func}(${2:param} ${3:type}) ${4:return_type} {
+		//bla
+	}
+
+snippet struct
+	 type ${1:StructName} struct {
+		 //var_name type
+	 }
+
+snippet interface
+	type ${1:InterfaceName} interface {
+		${2:FuncName}(${3:param} ${3:type}) (${4:return_type})
+	}

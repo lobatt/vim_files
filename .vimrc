@@ -26,7 +26,6 @@ filetype plugin indent on
 color darkblue
 set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
 
-filetype plugin on
 set ofu=syntaxcomplete#Complete
 
 "ctags
@@ -55,9 +54,22 @@ Bundle 'L9'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'msanders/snipmate.vim'
 Bundle 'ervandew/supertab'
+Bundle 'majutsushi/tagbar'
 Bundle 'lobatt/Vimbo'
+Bundle 'Blackrush/vim-gocode'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
+
 " ...
 
-filetype plugin indent on     " required!
+nmap <leader>rm :!make -j4 1>/dev/null<CR>
+
+"go
+set rtp+=/usr/local/Cellar/go/1.0.3/misc/vim
+au BufRead,BufNewFile *.go set filetype=go
+filetype plugin indent on
+syntax on
+
+"ruby
+autocmd FileType ruby set expandtab
+autocmd FileType ruby set sw=2 ts=2 
