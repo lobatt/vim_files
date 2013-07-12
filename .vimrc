@@ -56,7 +56,10 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'lobatt/Vimbo'
+"go
 Bundle 'Blackrush/vim-gocode'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 
@@ -65,11 +68,17 @@ Bundle 'git://git.wincent.com/command-t.git'
 nmap <leader>rm :!make -j4 1>/dev/null<CR>
 
 "go
-set rtp+=/usr/local/Cellar/go/1.0.3/misc/vim
+set rtp+=/usr/local/Cellar/go/1.1/misc/vim
 au BufRead,BufNewFile *.go set filetype=go
 filetype plugin indent on
 syntax on
 
+nmap <leader>rg :!go run %<CR> 
+
 "ruby
 autocmd FileType ruby set expandtab
 autocmd FileType ruby set sw=2 ts=2 
+
+
+"dash
+nmap <F1> <Esc>:Dash <CR>

@@ -5,7 +5,7 @@ snippet import
 
 snippet func
 	func ${1:Func}(${2:param} ${3:type}) ${4:return_type} {
-		//bla
+		${5}
 	}
 
 snippet struct
@@ -17,3 +17,29 @@ snippet interface
 	type ${1:InterfaceName} interface {
 		${2:FuncName}(${3:param} ${3:type}) (${4:return_type})
 	}
+
+snippet http_server
+	s := &http.Server{
+		Addr:           ":8080",
+		Handler:        ${1:handler}
+	}
+	log.Fatal(s.ListenAndServe())
+
+snippet hh
+	http.Handle("/${1:path}", &${2:handler}{})
+
+	type $2 struct {
+	}
+	func (s *$2) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
+		${3}
+	}
+
+snippet p
+	fmt.Printf("%${1}\n", ${2})
+	
+snippet sp
+	fmt.Sprintf("%${1}\n", ${2})
+
+snippet fp
+	fmt.Fprintf("%${1}\n", ${2})
