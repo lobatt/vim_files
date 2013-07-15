@@ -73,7 +73,7 @@ au BufRead,BufNewFile *.go set filetype=go
 filetype plugin indent on
 syntax on
 
-nmap <leader>rg :!go run %<CR> 
+nmap <leader>rg :!go run %<CR>
 
 "ruby
 autocmd FileType ruby set expandtab

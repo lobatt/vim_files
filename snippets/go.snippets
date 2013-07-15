@@ -1,21 +1,26 @@
+snippet pack
+	package ${1:name}
 snippet import
 	import (
 		"${1:module}"
 	)
 
+snippet main
+	func main() {
+	}
 snippet func
 	func ${1:Func}(${2:param} ${3:type}) ${4:return_type} {
 		${5}
 	}
 
 snippet struct
-	 type ${1:StructName} struct {
-		 //var_name type
-	 }
+	type ${1:StructName} struct {
+		${2:varname} ${3:type}
+	}
 
 snippet interface
 	type ${1:InterfaceName} interface {
-		${2:FuncName}(${3:param} ${3:type}) (${4:return_type})
+		${2:FuncName}(${3:param} ${4:type}) (${5:return_type})
 	}
 
 snippet http_server
@@ -37,7 +42,7 @@ snippet hh
 
 snippet p
 	fmt.Printf("%${1}\n", ${2})
-	
+
 snippet sp
 	fmt.Sprintf("%${1}\n", ${2})
 
