@@ -47,6 +47,7 @@ let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 
 "for clang_complete
 let g:clang_use_library=1
+let g:clang_library_path='/Library/Developer/CommandLineTools/usr/lib'
 
 "plugin bundles
 Bundle 'tpope/vim-fugitive'
@@ -70,6 +71,8 @@ nmap <leader>rm :!make -j4 1>/dev/null<CR>
 "go
 set rtp+=/usr/local/Cellar/go/1.1/misc/vim
 au BufRead,BufNewFile *.go set filetype=go
+au BufRead,BufNewFile *.go set expandtab
+au BufRead,BufNewFile *.go set sw=2 ts=2
 filetype plugin indent on
 syntax on
 
@@ -83,3 +86,6 @@ autocmd FileType ruby set sw=2 ts=2
 
 "dash
 nmap <F1> <Esc>:Dash <CR>
+
+"mouse
+"set mouse=ar mousemodel=extend

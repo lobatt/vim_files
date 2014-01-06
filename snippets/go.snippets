@@ -9,8 +9,12 @@ snippet main
 	func main() {
 	}
 snippet func
-	func ${1:Func}(${2:param} ${3:type}) ${4:return_type} {
+	func ${1}(${2} ${3}) ${4} {
 		${5}
+	}
+
+snippet testf
+	func Test${1:Func}(t *testing.T) {
 	}
 
 snippet functo
@@ -20,6 +24,20 @@ snippet struct
 	type ${1:StructName} struct {
 		${2:varname} ${3:type}
 	}
+
+snippet new
+	func New${1:Type}() *$1 {
+		return &$1{}
+	}
+
+snippet newlog
+	logfile, err := os.OpenFile("${1:filename}",os.O_RDWR|os.O_CREATE, 755);
+	if err != nil {
+		fmt.Printf("Failed to open log file $1: %v", err)
+		return
+	}
+	defer logfile.Close()
+	logger := log.New(logfile, "", log.Ldate | log.Ltime | log.Lshortfile)
 
 snippet interface
 	type ${1:InterfaceName} interface {
@@ -51,3 +69,14 @@ snippet sp
 
 snippet fp
 	fmt.Fprintf("%${1}\n", ${2})
+
+snippet `
+	\`xml:"${1}"\`
+snippet for
+	for _, ${1} := range ${2} {
+	}
+
+snippet mkarr
+	make([]${1}, ${2}, ${3})
+snippet mkmap
+	make(map[${1}] ${2})
