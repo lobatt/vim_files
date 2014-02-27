@@ -57,6 +57,8 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'lobatt/Vimbo'
+"js
+Bundle 'othree/javascript-libraries-syntax.vim'
 "go
 Bundle 'Blackrush/vim-gocode'
 Bundle 'rizzatti/funcoo.vim'
@@ -77,12 +79,15 @@ filetype plugin indent on
 syntax on
 
 nmap <leader>gr :!go run %<CR>
-nmap <leader>gt :!go test -file %<CR>
+nmap <leader>gt :!go test -test.short -file %<CR>
 
 "ruby
 autocmd FileType ruby set expandtab
 autocmd FileType ruby set sw=2 ts=2 
 
+"js
+au BufRead,BufNewFile *.js set expandtab
+au BufRead,BufNewFile *.js set sw=2 ts=2
 
 "dash
 nmap <F1> <Esc>:Dash <CR>
