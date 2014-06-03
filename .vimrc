@@ -23,7 +23,7 @@ Bundle 'gmarik/vundle'
 syntax on
 filetype plugin indent on
 
-color darkblue
+color darkblue 
 set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
 
 set ofu=syntaxcomplete#Complete
@@ -37,7 +37,7 @@ nmap <leader>T :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q
 nmap <F10> <Esc>:!svn diff % <CR>
 
 " for python
-autocmd FileType python set expandtab
+" autocmd FileType python set expandtab
 
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
@@ -94,3 +94,6 @@ nmap <F1> <Esc>:Dash <CR>
 
 "mouse
 "set mouse=ar mousemodel=extend
+
+"execute current line
+nmap <leader>te :.w !bash<CR>
