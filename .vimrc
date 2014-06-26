@@ -46,13 +46,16 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 
 "for clang_complete
-let g:clang_use_library=1
-let g:clang_library_path='/Library/Developer/CommandLineTools/usr/lib'
+"let g:clang_use_library=1
+"let g:clang_library_path='/Library/Developer/CommandLineTools/usr/lib'
+
+"for YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 "plugin bundles
 Bundle 'tpope/vim-fugitive'
 Bundle 'L9'
-Bundle 'Rip-Rip/clang_complete'
+"Bundle 'Rip-Rip/clang_complete'
 Bundle 'msanders/snipmate.vim'
 Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
@@ -63,6 +66,8 @@ Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
+"complete
+Bundle 'Valloric/YouCompleteMe'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 
