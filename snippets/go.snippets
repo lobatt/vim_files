@@ -24,7 +24,7 @@ snippet testf
 	}
 
 snippet functo
-	func (p *${1:Type}) ${2:FuncName}(${3} ${4}) ${5:return_type} {
+	func (p *${1:Type}) ${2:FuncName}(${3}) ${4}{
 	}
 snippet struct
 	type ${1:StructName} struct {
@@ -68,24 +68,24 @@ snippet hh
 	}
 
 snippet fmtp
-	fmt.Printf("%${1}\n", ${2})
+		fmt.Printf("%${1}\n", ${2})
 
 snippet fmtsp
-	fmt.Sprintf("%${1}\n", ${2})
+		fmt.Sprintf("%${1}\n", ${2})
 
 snippet fmtfp
-	fmt.Fprintf("%${1}\n", ${2})
+		fmt.Fprintf("%${1}\n", ${2})
 
 snippet `
-	\`xml:"${1}"\`
+		\`xml:"${1}"\`
 snippet for
 	for _, ${1} := range ${2} {
 	}
 
 snippet mkarr
-	make([]${1}, ${2}, ${3})
+		make([]${1}, ${2}, ${3})
 snippet mkmap
-	make(map[${1}] ${2})
+		make(map[${1}] ${2})
 
 snippet dbq
 	q := ""
@@ -96,3 +96,6 @@ snippet dbq
 	} else {
 		return err
 	}
+
+snippet append
+		${1:list} = append($1, ${2})

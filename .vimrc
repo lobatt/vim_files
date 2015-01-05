@@ -8,6 +8,7 @@ set showmatch
 set autoindent
 set smartindent
 set hlsearch
+set ruler
 
 "pathogen
 "call pathogen#infect()
@@ -39,8 +40,8 @@ nmap <F10> <Esc>:!svn diff % <CR>
 " for python
 " autocmd FileType python set expandtab
 
-au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
+"au FileType python set omnifunc=pythoncomplete#Complete
+"let g:SuperTabDefaultCompletionType = "context"
 
 "Tagbar
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
@@ -51,13 +52,14 @@ let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 
 "for YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_key_list_select_completion = []
 
 "plugin bundles
 Bundle 'tpope/vim-fugitive'
 Bundle 'L9'
 "Bundle 'Rip-Rip/clang_complete'
 Bundle 'msanders/snipmate.vim'
-Bundle 'ervandew/supertab'
+"Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'lobatt/Vimbo'
 "js
@@ -78,7 +80,7 @@ nmap <leader>rm :!make -j4 1>/dev/null<CR>
 "go
 set rtp+=/usr/local/Cellar/go/1.1/misc/vim
 au BufRead,BufNewFile *.go set filetype=go
-au BufRead,BufNewFile *.go set expandtab
+"au BufRead,BufNewFile *.go set expandtab
 au BufRead,BufNewFile *.go set sw=2 ts=2
 filetype plugin indent on
 syntax on
