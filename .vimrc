@@ -79,6 +79,7 @@ nmap <leader>rm :!make -j4 1>/dev/null<CR>
 
 "go
 set rtp+=/usr/local/Cellar/go/1.1/misc/vim
+let g:go_fmt_autofmt=0
 au BufRead,BufNewFile *.go set filetype=go
 "au BufRead,BufNewFile *.go set expandtab
 au BufRead,BufNewFile *.go set sw=2 ts=2
