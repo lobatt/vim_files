@@ -26,6 +26,7 @@ filetype plugin indent on
 
 color darkblue 
 set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
+"set guifont=Inconsolata\ 12
 
 set ofu=syntaxcomplete#Complete
 
@@ -38,13 +39,20 @@ nmap <leader>T :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q
 nmap <F10> <Esc>:!svn diff % <CR>
 
 " for python
-" autocmd FileType python set expandtab
+autocmd FileType python set noexpandtab ts=4
 
 "au FileType python set omnifunc=pythoncomplete#Complete
 "let g:SuperTabDefaultCompletionType = "context"
 
+" for XML
+let g:xml_syntax_folding=1
+"au FileType xml setlocal foldmethod=syntax
+au FileType xsd setlocal foldmethod=syntax
+au FileType xsd setlocal foldlevel=2
+
 "Tagbar
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+nmap <F8> :TagbarToggle<CR> 
 
 "for clang_complete
 "let g:clang_use_library=1
@@ -65,13 +73,15 @@ Bundle 'lobatt/Vimbo'
 "js
 Bundle 'othree/javascript-libraries-syntax.vim'
 "go
-Bundle 'Blackrush/vim-gocode'
+Bundle 'fatih/vim-go'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 "complete
 Bundle 'Valloric/YouCompleteMe'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
+" vim-react-snippets
+Plugin 'justinj/vim-react-snippets'
 
 " ...
 
@@ -79,7 +89,7 @@ nmap <leader>rm :!make -j4 1>/dev/null<CR>
 
 "go
 set rtp+=/usr/local/Cellar/go/1.1/misc/vim
-let g:go_fmt_autofmt=0
+let g:go_fmt_autosave = 0
 au BufRead,BufNewFile *.go set filetype=go
 "au BufRead,BufNewFile *.go set expandtab
 au BufRead,BufNewFile *.go set sw=2 ts=2

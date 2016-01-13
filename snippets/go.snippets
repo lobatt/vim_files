@@ -99,3 +99,10 @@ snippet dbq
 
 snippet append
 	${1:list} = append($1, ${2})
+
+snippet runtest
+	ut.RunTestCases(t,
+	func() () {return },
+	ut.TCase{[]ut.TInput {  }, []ut.TExpect{ ut.Equal() }},
+	)
+
