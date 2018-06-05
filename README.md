@@ -5,3 +5,6 @@ My vim files
 	cd ~/.vim
 	git submodule update --init --recursive
 	vim +BundleInstall
+
+Insstruction for compiling YcM:
+https://github.com/Valloric/YouCompleteMe
